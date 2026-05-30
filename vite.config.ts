@@ -21,6 +21,7 @@ export default defineConfig({
       name: "ryuu-proxy",
       configureServer(server) {
         // Patch the `res` object to add `status` and `send` methods
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         server.middlewares.use((_req: any, res: any, next: any) => {
           res.status = function (code: number) {
             this.statusCode = code;
