@@ -4,6 +4,7 @@ import { buildParsedMetrics } from "./utils/metricHelpers";
 import { SECTIONS } from "./data/sections";
 import { DashboardHeader } from "./components/DashboardHeader";
 import { SectionPanel } from "./components/SectionPanel";
+import { SignalFiltersCard } from "./components/SignalFiltersCard";
 
 export default function App() {
   const [isDark, setIsDark] = useState(false);
@@ -69,6 +70,46 @@ export default function App() {
 
       {/* ── Main Canvas Content Area ── */}
       <div className="max-w-screen-2xl mx-auto px-6 py-6 flex flex-col gap-6">
+        {hasData && !isLoading && !error && (
+          <div className="flex flex-wrap gap-4 items-stretch select-none">
+            {/* Separate Overall Overview Card */}
+            <SignalFiltersCard
+              metrics={allMetricsForMonth}
+              activeSignalFilter={activeSignalFilter}
+              onSignalFilterToggle={(filter) => {
+                if (filter === "all") {
+                  setActiveSignalFilter(null);
+                } else {
+                  setActiveSignalFilter(activeSignalFilter === filter ? null : filter);
+                }
+              }}
+            />
+
+            {/* Tri-Color Spectrum Filters Card */}
+            <button
+              onClick={() => setActiveSignalFilter(null)}
+              className={`w-28 flex flex-col justify-between items-center rounded-xl border p-3.5 shadow-sm transition-all duration-300 active:scale-95 cursor-pointer hover:shadow-md ${activeSignalFilter === null
+                ? "bg-white border-slate-805 text-slate-850 dark:bg-slate-900 dark:border-slate-200 dark:text-white font-black shadow-[0_0_12px_rgba(0,0,0,0.03)]"
+                : "bg-white dark:bg-slate-900 border-slate-150/60 dark:border-slate-900 text-slate-400 dark:text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-900/60"
+                }`}
+              title="Clear active status filter and show all metrics"
+            >
+              <span className={`text-sm font-black tracking-tight leading-none h-12 flex items-center transition-colors ${activeSignalFilter === null 
+                ? "text-slate-850 dark:text-white" 
+                : "text-slate-400 dark:text-slate-500"
+                }`}>
+                {allMetricsForMonth.length}
+              </span>
+              <span className={`text-[9px] font-black uppercase tracking-widest mt-2.5 transition-all duration-300 ${activeSignalFilter === null
+                ? "text-slate-850 dark:text-white"
+                : "text-slate-300 dark:text-slate-700 opacity-40 scale-95"
+                }`}>
+                Overview
+              </span>
+            </button>
+          </div>
+        )}
+
         <main className="w-full">
           {/* Loading HUD Panel */}
           {isLoading && (
