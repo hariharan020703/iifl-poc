@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { ParsedMetric } from "../types";
 import { CATEGORY_COLORS } from "../data/sections";
 import { formatPctChange } from "../utils/metricHelpers";
@@ -54,7 +53,7 @@ function MetricRowItem({ metric }: { metric: ParsedMetric }) {
 
       {/* 2. Current Month Value */}
       <div className="w-20 text-right flex-shrink-0">
-        <span className={`font-mono text-[12px] font-black transition-colors ${t.valueColor}`}>
+        <span className="font-mono text-[12px] font-black text-slate-700 dark:text-slate-200">
           {metric.formattedCurrent}
         </span>
       </div>
@@ -85,8 +84,6 @@ function MetricRowItem({ metric }: { metric: ParsedMetric }) {
 }
 
 export function CategoryGroup({ category, metrics, isFiltered }: CategoryGroupProps) {
-  const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
-
   if (!metrics.length) return null;
 
   // If a filter is active, bypass accordions and show metrics directly in a single, flat list
@@ -105,6 +102,15 @@ export function CategoryGroup({ category, metrics, isFiltered }: CategoryGroupPr
         
         {/* Consolidate matching metrics "one-by-one" in a clean ledger list */}
         <div className="bg-white/40 dark:bg-slate-950/20 border border-slate-150/50 dark:border-slate-900 rounded-xl overflow-hidden shadow-inner divide-y divide-slate-100 dark:divide-slate-900/60 mb-4">
+          {/* Column Headers */}
+          <div className="flex items-center justify-between py-2 px-3.5 bg-slate-50/70 dark:bg-slate-900/40 border-b border-slate-150/50 dark:border-slate-900/60 text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 gap-4 select-none">
+            <div className="flex-1 min-w-0 text-left">Metrics</div>
+            <div className="w-20 text-right flex-shrink-0">{metrics[0]?.currentMonthLabel || "Current"}</div>
+            <div className="w-20 text-right flex-shrink-0">{metrics[0]?.previousMonthLabel || "Previous"}</div>
+            <div className="w-16 text-right flex-shrink-0 whitespace-nowrap">Delta Change</div>
+            <div className="w-6 flex items-center justify-end flex-shrink-0">RAG</div>
+          </div>
+
           {metrics.map((m, i) => (
             <MetricRowItem key={`${m.category}-${m.metricName}-${i}`} metric={m} />
           ))}
@@ -128,17 +134,6 @@ export function CategoryGroup({ category, metrics, isFiltered }: CategoryGroupPr
     groups[groupName].push(m);
   }
 
-  const toggleGroup = (groupName: string) => {
-    setCollapsed((prev) => ({
-      ...prev,
-      [groupName]: !prev[groupName],
-    }));
-  };
-
-  const isCollapsed = (groupName: string) => {
-    return !!collapsed[groupName];
-  };
-
   return (
     <div className="animate-fadeIn">
       <div className="space-y-3">
@@ -147,16 +142,12 @@ export function CategoryGroup({ category, metrics, isFiltered }: CategoryGroupPr
           const groupRed = groupMetrics.filter((m) => m.signal === "red").length;
           const groupAmber = groupMetrics.filter((m) => m.signal === "amber").length;
           const groupGreen = groupMetrics.filter((m) => m.signal === "green").length;
-          const isOpen = !isCollapsed(groupName);
 
           return (
             <div key={groupName} className="animate-fadeIn">
               
-              {/* Accordion Header Panel */}
-              <div
-                onClick={() => toggleGroup(groupName)}
-                className="flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/35 hover:bg-slate-100/60 dark:hover:bg-slate-900/60 border border-slate-150/40 dark:border-slate-900/80 rounded-xl px-4 py-2 flex-wrap gap-2 cursor-pointer transition-all duration-200 select-none"
-              >
+              {/* Header Panel */}
+              <div className="flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/35 border border-slate-150/40 dark:border-slate-900/80 rounded-xl px-4 py-2 flex-wrap gap-2">
                 {/* Left side: colored bar, title, and count */}
                 <div className="flex items-center gap-2">
                   <div
@@ -171,53 +162,43 @@ export function CategoryGroup({ category, metrics, isFiltered }: CategoryGroupPr
                   </span>
                 </div>
 
-                {/* Right side: micro indicator pills & toggle chevron */}
+                {/* Right side: micro indicator pills */}
                 <div className="flex items-center gap-3">
                   <div className="flex items-center gap-1.5 flex-wrap">
-                    {groupGreen > 0 && (
+                    {/* {groupGreen > 0 && ( */}
                       <span className="text-[8px] font-extrabold bg-emerald-50 dark:bg-emerald-950/20 text-emerald-700 dark:text-emerald-400 border border-emerald-150/40 dark:border-emerald-500/10 px-2 py-0.5 rounded-full uppercase tracking-wider">
                         {groupGreen} On Track
                       </span>
-                    )}
-                    {groupAmber > 0 && (
+                    {/* )} */}
+                    {/* {groupAmber > 0 && ( */}
                       <span className="text-[8px] font-extrabold bg-amber-50 dark:bg-amber-950/20 text-amber-700 dark:text-amber-400 border border-amber-150/40 dark:border-amber-500/10 px-2 py-0.5 rounded-full uppercase tracking-wider">
                         {groupAmber} Monitor
                       </span>
-                    )}
-                    {groupRed > 0 && (
+                    {/* )} */}
+                    {/* {groupRed > 0 && ( */}
                       <span className="text-[8px] font-extrabold bg-rose-50 dark:bg-rose-950/20 text-rose-700 dark:text-rose-400 border border-rose-150/40 dark:border-rose-500/10 px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse">
                         {groupRed} Off Track
                       </span>
-                    )}
+                    {/* )} */}
                   </div>
-
-                  {/* Accordion Chevron Icon */}
-                  <svg
-                    className={`w-3.5 h-3.5 text-slate-400 dark:text-cyan-600/70 transition-transform duration-300 transform ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="3.5"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
                 </div>
               </div>
 
-              {/* Accordion Body: Modern Ticker Ledger Row Table */}
-              {isOpen && (
-                <div className="animate-fadeIn bg-white/40 dark:bg-slate-950/20 border border-slate-150/50 dark:border-slate-900 rounded-xl overflow-hidden shadow-inner divide-y divide-slate-100 dark:divide-slate-900/60 mt-1.5 mb-4">
-                  {groupMetrics.map((m, i) => (
-                    <MetricRowItem key={`${m.category}-${groupName}-${m.metricName}-${i}`} metric={m} />
-                  ))}
+              {/* Body: Modern Ticker Ledger Row Table */}
+              <div className="animate-fadeIn bg-white/40 dark:bg-slate-950/20 border border-slate-150/50 dark:border-slate-900 rounded-xl overflow-hidden shadow-inner divide-y divide-slate-100 dark:divide-slate-900/60 mt-1.5 mb-4">
+                {/* Column Headers */}
+                <div className="flex items-center justify-between py-2 px-3.5 bg-slate-50/70 dark:bg-slate-900/40 border-b border-slate-150/50 dark:border-slate-900/60 text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-550 gap-4 select-none">
+                  <div className="flex-1 min-w-0 text-left">Metrics</div>
+                  <div className="w-20 text-right flex-shrink-0">{groupMetrics[0]?.currentMonthLabel || "Current"}</div>
+                  <div className="w-20 text-right flex-shrink-0">{groupMetrics[0]?.previousMonthLabel || "Previous"}</div>
+                  <div className="w-16 text-right flex-shrink-0 whitespace-nowrap">Delta Change</div>
+                  <div className="w-6 flex items-center justify-end flex-shrink-0">RAG</div>
                 </div>
-              )}
+
+                {groupMetrics.map((m, i) => (
+                  <MetricRowItem key={`${m.category}-${groupName}-${m.metricName}-${i}`} metric={m} />
+                ))}
+              </div>
 
             </div>
           );
