@@ -1,0 +1,506 @@
+[
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "SBL",
+    "metricName": "Total Unique Disb",
+    "currentValue": 35,
+    "previousValue": 55
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "SBL",
+    "metricName": "Wt LTV%",
+    "currentValue": 54.58,
+    "previousValue": 60.1
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "SBL",
+    "metricName": "CIBIL 750+ Share%",
+    "currentValue": 48.63,
+    "previousValue": 48.63
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "SBL",
+    "metricName": "Tranch Disb Count",
+    "currentValue": 55,
+    "previousValue": 149
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "SBL",
+    "metricName": "Disb Amt (Cr)",
+    "currentValue": 33.7,
+    "previousValue": 70.15
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "SBL",
+    "metricName": "Wt ROI%",
+    "currentValue": 13.59,
+    "previousValue": 13.22
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "Flow Rate",
+    "metricName": "Closing AUM (Cr)",
+    "currentValue": 3199,
+    "previousValue": 10649
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "Flow Rate",
+    "metricName": "% Total AUM",
+    "currentValue": 58.9,
+    "previousValue": 61.4
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "Flow Rate",
+    "metricName": "Roll Back (Stab)%",
+    "currentValue": 98.4,
+    "previousValue": 98.6
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "Flow Rate",
+    "metricName": "Roll Forward%",
+    "currentValue": 1.6,
+    "previousValue": 1.4
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "SBL",
+    "metricName": "Total Unique Disb",
+    "currentValue": 4,
+    "previousValue": 35
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "SBL",
+    "metricName": "Wt LTV%",
+    "currentValue": 67.07,
+    "previousValue": 54.58
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "SBL",
+    "metricName": "CIBIL 750+ Share%",
+    "currentValue": 48.63,
+    "previousValue": 48.63
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "SBL",
+    "metricName": "Tranch Disb Count",
+    "currentValue": 5,
+    "previousValue": 55
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "SBL",
+    "metricName": "Disb Amt (Cr)",
+    "currentValue": 1.85,
+    "previousValue": 33.7
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "SBL",
+    "metricName": "Wt ROI%",
+    "currentValue": 13.46,
+    "previousValue": 13.59
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "Flow Rate",
+    "metricName": "Closing AUM (Cr)",
+    "currentValue": 3007,
+    "previousValue": 3199
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "Flow Rate",
+    "metricName": "% Total AUM",
+    "currentValue": 58.1,
+    "previousValue": 58.9
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "Flow Rate",
+    "metricName": "Roll Back (Stab)%",
+    "currentValue": 82.2,
+    "previousValue": 98.4
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Loan Products",
+    "metrics": "Flow Rate",
+    "metricName": "Roll Forward%",
+    "currentValue": 17.8,
+    "previousValue": 1.6
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Portfolio at Risk",
+    "metricName": "A.0 DPD %",
+    "currentValue": 60.68,
+    "previousValue": 63.41
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Portfolio at Risk",
+    "metricName": "B.1-30 DPD %",
+    "currentValue": 2.81,
+    "previousValue": 2.11
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Portfolio at Risk",
+    "metricName": "C.31-60 DPD %",
+    "currentValue": 1.44,
+    "previousValue": 1.56
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Portfolio at Risk",
+    "metricName": "D.61-90 DPD %",
+    "currentValue": 1.27,
+    "previousValue": 1.15
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Portfolio at Risk",
+    "metricName": "E.90+ DPD %",
+    "currentValue": 33.79,
+    "previousValue": 31.78
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Bounce Rate",
+    "metricName": "PL Bounce%",
+    "currentValue": 10.96,
+    "previousValue": 5.66
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Bounce Rate",
+    "metricName": "BL Bounce%",
+    "currentValue": 13.15,
+    "previousValue": 12.73
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "CGTMSE & CGFMU",
+    "metricName": "CGTMSE & CGFMU Total Count",
+    "currentValue": 143325,
+    "previousValue": 72802
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "CGTMSE & CGFMU",
+    "metricName": "CGTMSE & CGFMU Total POS (Cr)",
+    "currentValue": 7109,
+    "previousValue": 3747
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "CGTMSE & CGFMU",
+    "metricName": "CGTMSE Eligible",
+    "currentValue": 1068,
+    "previousValue": 538
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Portfolio at Risk",
+    "metricName": "A.0 DPD %",
+    "currentValue": 51.05,
+    "previousValue": 60.68
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Portfolio at Risk",
+    "metricName": "B.1-30 DPD %",
+    "currentValue": 9.23,
+    "previousValue": 2.81
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Portfolio at Risk",
+    "metricName": "C.31-60 DPD %",
+    "currentValue": 2.33,
+    "previousValue": 1.44
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Portfolio at Risk",
+    "metricName": "D.61-90 DPD %",
+    "currentValue": 1.41,
+    "previousValue": 1.27
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Portfolio at Risk",
+    "metricName": "E.90+ DPD %",
+    "currentValue": 35.96,
+    "previousValue": 33.79
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Bounce Rate",
+    "metricName": "PL Bounce%",
+    "currentValue": 12.26,
+    "previousValue": 10.96
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "Bounce Rate",
+    "metricName": "BL Bounce%",
+    "currentValue": 13.92,
+    "previousValue": 13.15
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "CGTMSE & CGFMU",
+    "metricName": "CGTMSE & CGFMU Total Count",
+    "currentValue": 71484,
+    "previousValue": 143325
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "CGTMSE & CGFMU",
+    "metricName": "CGTMSE & CGFMU Total POS (Cr)",
+    "currentValue": 3487,
+    "previousValue": 7109
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "Risk",
+    "metrics": "CGTMSE & CGFMU",
+    "metricName": "CGTMSE Eligible",
+    "currentValue": 511,
+    "previousValue": 1068
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "BL KPI",
+    "metrics": "BL KPI",
+    "metricName": "Disbursement",
+    "currentValue": 83.51,
+    "previousValue": 84.1
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "BL KPI",
+    "metrics": "BL KPI",
+    "metricName": "Wt ROI (Jan'26)",
+    "currentValue": 17.32,
+    "previousValue": 17.39
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "BL KPI",
+    "metrics": "BL KPI",
+    "metricName": "PF% (Jan'26)",
+    "currentValue": 1,
+    "previousValue": 1
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "BL KPI",
+    "metrics": "BL KPI",
+    "metricName": "ATS (Jan'26)",
+    "currentValue": 24.49,
+    "previousValue": 24.38
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "BL KPI",
+    "metrics": "BL KPI",
+    "metricName": "Disbursement",
+    "currentValue": 1.37,
+    "previousValue": 83.51
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "BL KPI",
+    "metrics": "BL KPI",
+    "metricName": "Wt ROI (Jan'26)",
+    "currentValue": 17.04,
+    "previousValue": 17.32
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "BL KPI",
+    "metrics": "BL KPI",
+    "metricName": "PF% (Jan'26)",
+    "currentValue": 1,
+    "previousValue": 1
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "BL KPI",
+    "metrics": "BL KPI",
+    "metricName": "ATS (Jan'26)",
+    "currentValue": 27.32,
+    "previousValue": 24.49
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "SCF KPI",
+    "metrics": "SCF KPI",
+    "metricName": "Disb",
+    "currentValue": 95.8,
+    "previousValue": null
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "SCF KPI",
+    "metrics": "SCF KPI",
+    "metricName": "Xtracap",
+    "currentValue": 95.8,
+    "previousValue": null
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "SCF KPI",
+    "metrics": "SCF KPI",
+    "metricName": "Yield Vendor SCF",
+    "currentValue": 14.25,
+    "previousValue": 14.29
+  },
+  {
+    "monthYear": "Apr 2026",
+    "monthDate": "2026-04-01T06:29:50.000Z",
+    "category": "SCF KPI",
+    "metrics": "SCF KPI",
+    "metricName": "Yield Xtracap",
+    "currentValue": null,
+    "previousValue": 12.5
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "SCF KPI",
+    "metrics": "SCF KPI",
+    "metricName": "Disb",
+    "currentValue": null,
+    "previousValue": 95.8
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "SCF KPI",
+    "metrics": "SCF KPI",
+    "metricName": "Xtracap",
+    "currentValue": null,
+    "previousValue": 95.8
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "SCF KPI",
+    "metrics": "SCF KPI",
+    "metricName": "Yield Vendor SCF",
+    "currentValue": 14.23,
+    "previousValue": 14.25
+  },
+  {
+    "monthYear": "May 2026",
+    "monthDate": "2026-05-01T06:29:50.000Z",
+    "category": "SCF KPI",
+    "metrics": "SCF KPI",
+    "metricName": "Yield Xtracap",
+    "currentValue": null,
+    "previousValue": null
+  }
+]
