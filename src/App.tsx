@@ -126,7 +126,7 @@ export default function App() {
             <StatusInfoItem
               label="Monitor"
               count={allMetricsForMonth.filter((m) => m.signal === "amber").length}
-              colorClass="bg-amber-800 dark:bg-amber-700 text-white"
+              colorClass="bg-amber-500 dark:bg-amber-400 text-white"
             />
 
             {/* Off Track Indicator */}
