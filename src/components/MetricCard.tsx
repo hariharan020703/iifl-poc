@@ -54,48 +54,48 @@ export function MetricCard({ metric }: MetricCardProps) {
   return (
     <div
       className={`
-        group relative flex items-center justify-between p-5 rounded-2xl border
+        group relative flex items-center justify-between py-1.5 px-2.5 rounded-xl border
         transition-all duration-300 ${t.cardBg} ${t.hoverBorder}
-        hover:-translate-y-0.5 shadow-sm dark:shadow-[0_4px_30px_rgba(0,0,0,0.4)]
+        hover:-translate-y-0.5 shadow-sm dark:shadow-[0_2px_15px_rgba(0,0,0,0.3)]
         bg-white dark:backdrop-blur-md
       `}
     >
       {/* Left accent border-indicator */}
       <div
-        className={`absolute top-4 bottom-4 left-0 w-1 rounded-r-full transition-all duration-300 ${t.dotBg}`}
+        className={`absolute top-2 bottom-2 left-0 w-0.5 rounded-r-full transition-all duration-300 ${t.dotBg}`}
       />
 
       {/* Left side: Name and previous value */}
-      <div className="flex-1 pr-4 pl-2.5">
-        <h4 className="text-xs font-bold text-slate-800 dark:text-slate-250 leading-snug group-hover:text-slate-950 dark:group-hover:text-white transition-colors">
+      <div className="flex-1 pr-2 pl-1 min-w-0">
+        <h4 className="text-[11px] font-bold text-slate-800 dark:text-slate-250 leading-tight group-hover:text-slate-950 dark:group-hover:text-white transition-colors truncate" title={metric.metricName}>
           {metric.metricName}
         </h4>
-        <p className="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider mt-3 transition-colors">
-          Prev: <span className="font-mono text-slate-600 dark:text-slate-350">{metric.formattedPrevious}</span>
+        <p className="text-[8px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider mt-0.5 transition-colors">
+          Prev: <span className="font-mono text-slate-650 dark:text-slate-350">{metric.formattedPrevious}</span>
         </p>
       </div>
 
       {/* Right side: Current Month Value, percentage diff, and custom indicator rings */}
-      <div className="flex flex-col items-end justify-center flex-shrink-0 text-right">
+      <div className="flex flex-col items-end justify-center flex-shrink-0 text-right ml-2">
         {/* Current Month Value (standard corporate vs neon HUD text) */}
-        <span className={`text-2xl font-black font-mono tracking-tight leading-none transition-colors ${t.valueColor}`}>
+        <span className={`text-sm font-black font-mono tracking-tight leading-none transition-colors ${t.valueColor}`}>
           {metric.formattedCurrent}
         </span>
 
         {/* Pct Change & Indicator */}
-        <div className="flex items-center gap-2.5 mt-2.5">
+        <div className="flex items-center gap-1.5 mt-0.5">
           {metric.pctChange !== null && (
-            <span className={`text-[10px] font-bold font-mono px-2 py-0.5 rounded-lg border transition-colors ${t.pctBg}`}>
+            <span className={`text-[8px] font-bold font-mono px-1 py-0 rounded border leading-none transition-colors ${t.pctBg}`}>
               {pctString}
             </span>
           )}
 
           {/* Glowing breathing indicator in dark mode, clean circle in light mode */}
-          <div className="relative flex h-2 w-2 flex-shrink-0 items-center justify-center">
+          <div className="relative flex h-1.5 w-1.5 flex-shrink-0 items-center justify-center">
             {metric.signal !== "neutral" && (
               <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 dark:inline-flex hidden ${t.dotBg}`} />
             )}
-            <span className={`relative inline-flex rounded-full h-2 w-2 ${t.dotBg} ${t.dotGlow}`} />
+            <span className={`relative inline-flex rounded-full h-1.5 w-1.5 ${t.dotBg} ${t.dotGlow}`} />
           </div>
         </div>
       </div>

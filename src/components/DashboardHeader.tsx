@@ -38,8 +38,8 @@ export function DashboardHeader({
             <span className="font-black text-[11px] tracking-tight leading-none">IIFL</span>
           </div>
           <div>
-            <p className="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight transition-colors">Digital Loans Review</p>
-            <p className="text-[10px] text-slate-400 dark:text-slate-500 font-bold tracking-wider uppercase leading-tight mt-0.5 transition-colors">Management Dashboard</p>
+            <p className="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight transition-colors">IIFL Finance - Digital Loans Scorecard</p>
+            <p className="text-[10px] text-slate-400 dark:text-slate-500 font-bold tracking-wider uppercase leading-tight mt-0.5 transition-colors">Management One-Pager</p>
           </div>
         </div>
 
@@ -121,30 +121,30 @@ function Pill({ color, count, label, isSelected, isAnySelected, onClick }: PillP
     amber:   "bg-amber-50 text-amber-700 border-amber-150 dark:bg-amber-950/20 dark:text-amber-400 dark:border-amber-500/20 dark:shadow-[0_0_10px_rgba(245,158,11,0.06)]",
     red:     "bg-red-50 text-red-700 border-red-150 dark:bg-rose-950/20 dark:text-rose-400 dark:border-rose-500/20 dark:shadow-[0_0_10px_rgba(244,63,94,0.06)]",
   };
-  const dots: Record<string, string> = {
-    emerald: "bg-emerald-500 dark:shadow-[0_0_6px_#10b981]",
-    amber:   "bg-amber-500 dark:shadow-[0_0_6px_#f59e0b]",
-    red:     "bg-rose-500 dark:bg-rose-500 dark:shadow-[0_0_6px_#f43f5e] animate-pulse",
+
+  const selectedStyles: Record<string, string> = {
+    emerald: "bg-emerald-600 text-white border-emerald-600 dark:bg-emerald-500 dark:border-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.35)] opacity-100 scale-102 font-black",
+    amber:   "bg-amber-500 text-white border-amber-500 dark:bg-amber-500 dark:border-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.35)] opacity-100 scale-102 font-black",
+    red:     "bg-rose-600 text-white border-rose-600 dark:bg-rose-600 dark:border-rose-600 shadow-[0_0_15px_rgba(244,63,94,0.35)] opacity-100 scale-102 font-black",
   };
 
-  const activeBorder: Record<string, string> = {
-    emerald: "border-emerald-500 ring-2 ring-emerald-500/20 dark:border-emerald-400 dark:ring-emerald-400/20",
-    amber:   "border-amber-500 ring-2 ring-amber-500/20 dark:border-amber-400 dark:ring-amber-400/20",
-    red:     "border-rose-500 ring-2 ring-rose-500/20 dark:border-rose-450 dark:ring-rose-450/20",
+  const dots: Record<string, string> = {
+    emerald: isSelected ? "bg-white" : "bg-emerald-500 dark:shadow-[0_0_6px_#10b981]",
+    amber:   isSelected ? "bg-white" : "bg-amber-500 dark:shadow-[0_0_6px_#f59e0b]",
+    red:     isSelected ? "bg-white" : "bg-rose-500 dark:bg-rose-500 dark:shadow-[0_0_6px_#f43f5e] animate-pulse",
   };
 
   return (
     <button
       onClick={onClick}
       className={`
-        inline-flex items-center gap-2 px-3 py-1 rounded-xl text-[10px] font-bold uppercase tracking-widest border transition-all duration-300 cursor-pointer select-none active:scale-95
-        ${styles[color]}
-        ${isSelected ? activeBorder[color] : "border-transparent opacity-80"}
-        ${isAnySelected && !isSelected ? "opacity-35 scale-95" : "hover:opacity-100 hover:scale-102"}
+        inline-flex items-center gap-2 px-3 py-1 rounded-xl text-[10px] uppercase tracking-widest border transition-all duration-300 cursor-pointer select-none active:scale-95
+        ${isSelected ? selectedStyles[color] : `font-bold ${styles[color]}`}
+        ${isAnySelected && !isSelected ? "opacity-30 scale-95 border-transparent" : "hover:opacity-100 hover:scale-102"}
       `}
       title={`Filter by ${label}`}
     >
-      <span className={`w-1.5 h-1.5 rounded-full ${dots[color]}`} />
+      <span className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${dots[color]}`} />
       {count} {label}
     </button>
   );
