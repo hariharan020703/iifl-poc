@@ -6,6 +6,29 @@ import { DashboardHeader } from "./components/DashboardHeader";
 import { SectionPanel } from "./components/SectionPanel";
 import { SignalFiltersCard } from "./components/SignalFiltersCard";
 
+
+
+interface StatusInfoItemProps {
+  label: string;
+  count: number;
+  colorClass: string;
+}
+
+function StatusInfoItem({ label, count, colorClass }: StatusInfoItemProps) {
+  return (
+    <div className="flex items-center gap-2.5 px-1 py-1">
+      {/* Length/Count box with solid background color */}
+      <span className={`w-8 h-8 flex items-center justify-center rounded-lg font-black text-xs shadow-sm ${colorClass}`}>
+        {count}
+      </span>
+      {/* Label text next to it (side-by-side) with transparent background */}
+      <span className="text-[10px] font-black uppercase tracking-widest leading-none text-slate-500 dark:text-slate-400">
+        {label}
+      </span>
+    </div>
+  );
+}
+
 export default function App() {
   const [isDark, setIsDark] = useState(false);
 
@@ -71,8 +94,8 @@ export default function App() {
       {/* ── Main Canvas Content Area ── */}
       <div className="max-w-screen-2xl mx-auto px-6 py-6 flex flex-col gap-6">
         {hasData && !isLoading && !error && (
-          <div className="flex flex-wrap gap-4 items-stretch select-none">
-            {/* Separate Overall Overview Card */}
+          <div className="flex flex-wrap gap-6 items-center select-none">
+            {/* Tri-Color Spectrum Filters Card */}
             <SignalFiltersCard
               metrics={allMetricsForMonth}
               activeSignalFilter={activeSignalFilter}
@@ -85,28 +108,33 @@ export default function App() {
               }}
             />
 
-            {/* Tri-Color Spectrum Filters Card */}
-            <button
-              onClick={() => setActiveSignalFilter(null)}
-              className={`w-28 flex flex-col justify-between items-center rounded-xl border p-3.5 shadow-sm transition-all duration-300 active:scale-95 cursor-pointer hover:shadow-md ${activeSignalFilter === null
-                ? "bg-white border-slate-805 text-slate-850 dark:bg-slate-900 dark:border-slate-200 dark:text-white font-black shadow-[0_0_12px_rgba(0,0,0,0.03)]"
-                : "bg-white dark:bg-slate-900 border-slate-150/60 dark:border-slate-900 text-slate-400 dark:text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-900/60"
-                }`}
-              title="Clear active status filter and show all metrics"
-            >
-              <span className={`text-sm font-black tracking-tight leading-none h-12 flex items-center transition-colors ${activeSignalFilter === null 
-                ? "text-slate-850 dark:text-white" 
-                : "text-slate-400 dark:text-slate-500"
-                }`}>
-                {allMetricsForMonth.length}
-              </span>
-              <span className={`text-[9px] font-black uppercase tracking-widest mt-2.5 transition-all duration-300 ${activeSignalFilter === null
-                ? "text-slate-850 dark:text-white"
-                : "text-slate-300 dark:text-slate-700 opacity-40 scale-95"
-                }`}>
-                Overview
-              </span>
-            </button>
+            {/* Total Metrics Indicator */}
+            <StatusInfoItem
+              label="Total Metrics"
+              count={allMetricsForMonth.length}
+              colorClass="bg-slate-800 dark:bg-slate-700 text-white"
+            />
+
+            {/* On Track Indicator */}
+            <StatusInfoItem
+              label="On Track"
+              count={allMetricsForMonth.filter((m) => m.signal === "green").length}
+              colorClass="bg-emerald-800 dark:bg-emerald-700 text-white"
+            />
+
+            {/* Monitor Indicator */}
+            <StatusInfoItem
+              label="Monitor"
+              count={allMetricsForMonth.filter((m) => m.signal === "amber").length}
+              colorClass="bg-amber-500 dark:bg-amber-400 text-white"
+            />
+
+            {/* Off Track Indicator */}
+            <StatusInfoItem
+              label="Off Track"
+              count={allMetricsForMonth.filter((m) => m.signal === "red").length}
+              colorClass="bg-red-800 dark:bg-red-700 text-white"
+            />
           </div>
         )}
 
