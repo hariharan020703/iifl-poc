@@ -5,8 +5,13 @@ import { SECTIONS } from "./data/sections";
 import { DashboardHeader } from "./components/DashboardHeader";
 import { SectionPanel } from "./components/SectionPanel";
 import { SignalFiltersCard } from "./components/SignalFiltersCard";
+import domo from "ryuu.js";
 
-
+const SECTION_PAGE_IDS: Record<string, string> = {
+  "loan-products": "644747829",
+  "risk": "168565982",
+  "kpis": "1492789700",
+};
 
 interface StatusInfoItemProps {
   label: string;
@@ -184,7 +189,11 @@ export default function App() {
                 return (
                   <section
                     key={section.id}
-                    className={`relative bg-white/40 dark:bg-slate-900/10 dark:backdrop-blur-md rounded-xl border border-slate-150/60 dark:border-slate-900 p-4.5 shadow-sm transition-all duration-300 hover:shadow-md ${colSpanClass}`}
+                    className={`relative bg-white/40 dark:bg-slate-900/10 dark:backdrop-blur-md rounded-xl border border-slate-150/60 dark:border-slate-900 p-4.5 shadow-sm transition-all duration-300 hover:shadow-md cursor-pointer ${colSpanClass}`}
+                    onClick={() => {
+                      const pageId = SECTION_PAGE_IDS[section.id] || "644747829";
+                      domo.navigate(`/app-studio/563390455/pages/${pageId}`, false);
+                    }}
                   >
                     {/* Section Title Header */}
                     <div className="flex items-center gap-2.5 mb-4 pb-3 border-b border-slate-100 dark:border-slate-900">
